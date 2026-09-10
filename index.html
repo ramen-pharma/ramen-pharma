@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramen Pharma | رامن فارما — Ramspark Cream</title>
+<meta name="description" content="رامن فارما — Ramspark Cream، كريم مرطب للبشرة الجافة بتركيبة طبيعية غنية بالزنك.">
+<link rel="icon" href="assets/logo-circle.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1f255a;
+    --navy-deep:#12173d;
+    --gold:#d2a12a;
+    --gold-soft:#e9c877;
+    --teal:#1c8f82;
+    --ink:#1a1c22;
+    --paper:#f6f6f2;
+    --paper-alt:#ffffff;
+    --line:#e2e1d8;
+    --max:1160px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Tajawal', sans-serif;
+    font-size:17px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand-word{
+    font-family:'Cairo', sans-serif;
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  /* skip link for keyboard users */
+  .skip-link{
+    position:absolute; right:-999px; top:auto;
+    background:var(--navy); color:#fff; padding:10px 16px; border-radius:8px; z-index:200;
+  }
+  .skip-link:focus{ right:16px; top:16px; }
+
+  /* ---------- Header ---------- */
+  header.site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(246,246,242,0.92);
+    backdrop-filter:saturate(160%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 24px;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ height:36px; width:auto; }
+  nav.main-nav ul{
+    list-style:none; display:flex; gap:28px; margin:0; padding:0;
+  }
+  nav.main-nav a{
+    text-decoration:none; font-weight:700; font-size:15px; color:var(--navy);
+    padding:6px 2px; border-bottom:2px solid transparent;
+    transition:border-color .2s ease;
+  }
+  nav.main-nav a:hover{ border-color:var(--gold); }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  .nav-toggle span{ display:block; width:24px; height:2px; background:var(--navy); margin:5px 0; }
+
+  @media (max-width:760px){
+    nav.main-nav{
+      position:absolute; inset-inline:0; top:100%;
+      background:var(--paper-alt); border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .25s ease;
+    }
+    nav.main-nav.open{ max-height:320px; }
+    nav.main-nav ul{ flex-direction:column; padding:16px 24px; gap:4px; }
+    nav.main-nav a{ display:block; padding:10px 0; }
+    .nav-toggle{ display:block; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(210,161,42,0.18), transparent 45%),
+      linear-gradient(155deg, var(--navy-deep), var(--navy) 65%);
+    color:#f4f5f9;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:48px;
+    align-items:center;
+    padding-top:64px;
+    padding-bottom:56px;
+  }
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--gold-soft); font-weight:700; font-size:14px;
+    margin-bottom:18px;
+  }
+  .hero-eyebrow::before{
+    content:""; width:26px; height:2px; background:var(--gold-soft); display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.1rem);
+    font-weight:800;
+    line-height:1.35;
+    color:#fff;
+  }
+  .hero h1 .accent{ color:var(--gold-soft); }
+  .hero p.lead{
+    margin-top:20px; font-size:1.08rem; color:#dfe2f0; max-width:46ch;
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 26px; border-radius:12px; font-weight:700; font-size:15px;
+    text-decoration:none; border:1px solid transparent; cursor:pointer;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--gold); color:var(--navy-deep); }
+  .btn-primary:hover{ background:var(--gold-soft); }
+  .btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.35); }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.08); }
+
+  .hero-art{ position:relative; }
+  .hero-art img{
+    border-radius:22px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+  }
+  .hero-art .badge{
+    position:absolute; bottom:-18px; right:-18px;
+    background:var(--paper-alt); color:var(--navy);
+    border-radius:16px; padding:14px 18px;
+    box-shadow:0 18px 40px -18px rgba(0,0,0,0.4);
+    font-family:'Cairo',sans-serif; font-weight:800; font-size:14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-art .badge .dot{ width:10px; height:10px; border-radius:50%; background:var(--teal); }
+
+  @media (max-width:840px){
+    .hero .wrap{ grid-template-columns:1fr; padding-top:40px; }
+    .hero-art{ order:-1; max-width:340px; margin:0 auto; }
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:88px 0; }
+  section .section-head{ max-width:62ch; margin-bottom:44px; }
+  section h2{
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+    font-weight:800; color:var(--navy);
+    line-height:1.4;
+  }
+  section .section-head p{ margin-top:14px; color:#4b4d55; font-size:1.02rem; }
+  .divider-leaf{
+    width:56px; height:14px; margin-bottom:18px;
+    background:var(--gold);
+    -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 14'><path d='M0 7 C10 0, 18 0, 28 7 C38 14, 46 14, 56 7' stroke='black' stroke-width='3' fill='none'/></svg>") no-repeat center / contain;
+    mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 14'><path d='M0 7 C10 0, 18 0, 28 7 C38 14, 46 14, 56 7' stroke='black' stroke-width='3' fill='none'/></svg>") no-repeat center / contain;
+  }
+
+  /* ---------- About ---------- */
+  .about .wrap{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:start; }
+  .about-points{ list-style:none; margin:26px 0 0; padding:0; display:grid; gap:16px; }
+  .about-points li{
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--paper-alt); border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+  }
+  .about-points .ic{
+    flex:none; width:38px; height:38px; border-radius:10px;
+    background:rgba(31,37,90,0.08); color:var(--navy);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Cairo',sans-serif;
+  }
+  .about-points strong{ display:block; color:var(--navy); font-family:'Cairo',sans-serif; margin-bottom:2px; }
+  .about-side{
+    background:linear-gradient(160deg, var(--navy), var(--navy-deep));
+    border-radius:20px; padding:32px; color:#eef0f8;
+  }
+  .about-side img{ width:120px; margin:0 auto 18px; }
+  .about-side p{ text-align:center; color:#cfd3e6; font-size:.98rem; }
+  .about-side .handle{
+    display:block; text-align:center; margin-top:10px; font-weight:700; color:var(--gold-soft);
+    font-family:'Cairo',sans-serif;
+  }
+
+  @media (max-width:840px){ .about .wrap{ grid-template-columns:1fr; } }
+
+  /* ---------- Product ---------- */
+  .product{ background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .product .wrap{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center; }
+  .product-frame{
+    background:linear-gradient(160deg,#0e2947,#123a5c);
+    border-radius:24px; padding:22px;
+  }
+  .product-frame img{ border-radius:14px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 26px; }
+  .chip{
+    background:rgba(28,143,130,0.1); color:var(--teal);
+    border:1px solid rgba(28,143,130,0.25);
+    padding:8px 14px; border-radius:999px; font-weight:700; font-size:14px;
+  }
+  .product-specs{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+  .product-specs li{
+    display:flex; justify-content:space-between; gap:12px;
+    border-bottom:1px dashed var(--line); padding-bottom:10px; font-size:.98rem;
+  }
+  .product-specs li span:first-child{ color:#6a6c74; }
+  .product-specs li span:last-child{ font-weight:700; color:var(--navy); font-family:'Cairo',sans-serif; }
+  .ltr{ direction:ltr; unicode-bidi:isolate; display:inline-block; }
+
+  @media (max-width:840px){ .product .wrap{ grid-template-columns:1fr; } }
+
+  /* ---------- Results ---------- */
+  .results-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .result-card{
+    background:var(--paper-alt); border:1px solid var(--line); border-radius:18px; overflow:hidden;
+  }
+  .result-card img{ width:100%; }
+  .result-card .cap{ padding:18px 20px; }
+  .result-card .cap h3{ font-size:1.05rem; color:var(--navy); margin-bottom:6px; }
+  .result-card .cap p{ margin:0; color:#5a5c63; font-size:.94rem; }
+  .disclaimer{
+    margin-top:22px; font-size:.86rem; color:#8a8c93; text-align:center;
+  }
+  @media (max-width:760px){ .results-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Video ---------- */
+  .video-section .wrap{ max-width:880px; }
+  .video-shell{
+    aspect-ratio:16/9;
+    border-radius:20px;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(210,161,42,0.25), transparent 55%),
+      linear-gradient(160deg, var(--navy-deep), var(--navy));
+    display:flex; align-items:center; justify-content:center; flex-direction:column;
+    color:#eef0f8; text-align:center; gap:14px; padding:20px;
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .video-shell .play{
+    width:64px; height:64px; border-radius:50%;
+    background:var(--gold); color:var(--navy-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+  }
+  .video-shell .hint{ font-size:.9rem; color:#b9bdd2; max-width:42ch; }
+  .video-note{
+    margin-top:16px; font-size:.86rem; color:#8a8c93; text-align:center;
+  }
+  .video-note code{
+    background:#eee; padding:2px 6px; border-radius:6px; font-size:.82rem;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{ background:var(--paper-alt); border-top:1px solid var(--line); }
+  .contact-grid{ display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:start; }
+  .contact-cards{ display:grid; gap:14px; }
+  .contact-card{
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:16px 20px;
+  }
+  .contact-card .label{ color:#6a6c74; font-size:.88rem; margin-bottom:3px; }
+  .contact-card .value{ font-weight:700; color:var(--navy); font-family:'Cairo',sans-serif; font-size:1.05rem; }
+  .contact-card a.mini{
+    font-weight:700; font-size:.88rem; color:var(--teal); text-decoration:none; white-space:nowrap;
+  }
+  .socials{ display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
+  .socials a{
+    display:flex; align-items:center; gap:8px;
+    border:1px solid var(--line); border-radius:12px; padding:10px 16px;
+    text-decoration:none; font-weight:700; font-size:.92rem; color:var(--navy);
+    background:var(--paper);
+  }
+  .qr-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:18px;
+    padding:22px; text-align:center;
+  }
+  .qr-card img{ width:150px; margin:0 auto 12px; border-radius:10px; }
+  .qr-card p{ margin:0; font-size:.9rem; color:#5a5c63; }
+
+  @media (max-width:840px){ .contact-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-deep); color:#c9cce0; padding:48px 0 28px;
+  }
+  .foot-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+  .foot-brand{ display:flex; align-items:center; gap:10px; }
+  .foot-brand img{ height:30px; }
+  footer nav ul{ list-style:none; display:flex; gap:22px; margin:0; padding:0; flex-wrap:wrap; }
+  footer nav a{ text-decoration:none; color:#c9cce0; font-size:.92rem; }
+  footer nav a:hover{ color:var(--gold-soft); }
+  .foot-bottom{
+    margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08);
+    font-size:.85rem; color:#8b8ea8; text-align:center;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .btn:hover{ transform:none; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+<header class="site-header">
+  <div class="header-row">
+    <a class="brand" href="#top" aria-label="رامن فارما">
+      <img src="assets/logo-horizontal.png" alt="Ramen Pharma">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#about">عن الشركة</a></li>
+        <li><a href="#product">المنتج</a></li>
+        <li><a href="#results">النتائج</a></li>
+        <li><a href="#video">فيديو تعريفي</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">Ramen Pharma</span>
+        <h1>من قلب الطبيعة <span class="accent">لبشرتك</span></h1>
+        <p class="lead">
+          Ramspark Cream — كريم مرطب ومهدئ للبشرة الجافة، بتركيبة تحتوي على الزنك
+          ومكوّنات مستوحاة من الطبيعة، لبشرة أكثر نعومة وراحة يوماً بعد يوم.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/201151485144" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+          <a class="btn btn-ghost" href="#product">تعرف على المنتج</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/hero-product.jpg" alt="Ramspark Cream من رامن فارما، كريم مرطب للبشرة الجافة بحجم 100 جم">
+        <div class="badge"><span class="dot"></span> يحتوي على الزنك</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <div class="divider-leaf"></div>
+        <div class="section-head">
+          <h2>رامن فارما، عناية جلدية مستوحاة من الطبيعة</h2>
+          <p>
+            نحرص في رامن فارما على تقديم مستحضرات جلدية بتركيبات مدروسة، توازن بين
+            فعالية المكوّنات الفعّالة ولطف المكوّنات الطبيعية، لتمنح بشرتك العناية
+            التي تستحقها.
+          </p>
+        </div>
+        <ul class="about-points">
+          <li>
+            <span class="ic">١</span>
+            <div><strong>تركيبة متوازنة</strong>مرطبات ومكوّنات فعّالة بنسب مدروسة تناسب البشرة الجافة والحساسة.</div>
+          </li>
+          <li>
+            <span class="ic">٢</span>
+            <div><strong>غنية بالزنك</strong>عنصر معروف بدوره في دعم راحة البشرة المتهيجة.</div>
+          </li>
+          <li>
+            <span class="ic">٣</span>
+            <div><strong>استخدام يومي سهل</strong>قوام كريمي خفيف يمتص بسرعة دون أن يترك أثراً دهنياً.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="about-side">
+        <img src="assets/logo-circle.png" alt="شعار رامن فارما">
+        <p>تابعونا على مواقع التواصل الاجتماعي لمزيد من النصائح والعروض</p>
+        <span class="handle ltr">@ramen.pharma</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product -->
+  <section class="product" id="product">
+    <div class="wrap">
+      <div class="product-frame">
+        <img src="assets/product-box.jpg" alt="علبة منتج Ramspark Cream من رامن فارما">
+      </div>
+      <div>
+        <div class="divider-leaf"></div>
+        <div class="section-head" style="margin-bottom:0;">
+          <h2>Ramspark Cream</h2>
+          <p>Emollient Cream for Dry Skin — كريم مرطب مصمم خصيصاً للبشرة الجافة، بحجم عملي 100 جم.</p>
+        </div>
+        <div class="chip-row">
+          <span class="chip">Zinc</span>
+          <span class="chip">للبشرة الجافة</span>
+          <span class="chip">100 جم</span>
+          <span class="chip">قوام إيمولنت خفيف</span>
+        </div>
+        <ul class="product-specs">
+          <li><span>الاسم التجاري</span><span class="ltr">Ramspark Cream</span></li>
+          <li><span>التصنيف</span><span class="ltr">Emollient Cream for Dry Skin</span></li>
+          <li><span>العبوة</span><span class="ltr">100 gm</span></li>
+          <li><span>الشركة المصنّعة</span><span class="ltr">Ramen Pharma</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="results">
+    <div class="wrap">
+      <div class="divider-leaf"></div>
+      <div class="section-head">
+        <h2>نتائجنا أصدق من أي كلام</h2>
+        <p>لمحة من رحلة العناية بالبشرة مع الاستخدام المنتظم لـ Ramspark Cream.</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card">
+          <img src="assets/before-after.jpg" alt="مقارنة قبل وبعد استخدام Ramspark Cream">
+          <div class="cap">
+            <h3>قبل / بعد</h3>
+            <p>نتيجة تُظهر أثر الاستخدام المنتظم للكريم على مظهر البشرة.</p>
+          </div>
+        </div>
+        <div class="result-card">
+          <img src="assets/stages.jpg" alt="مراحل رحلة العناية بالبشرة خطوة بخطوة">
+          <div class="cap">
+            <h3>رحلة العناية خطوة بخطوة</h3>
+            <p>من المرحلة الأولى وحتى المرحلة الأخيرة، تطوّر ملحوظ في مظهر البشرة.</p>
+          </div>
+        </div>
+      </div>
+      <p class="disclaimer">* النتائج قد تختلف من شخص لآخر باختلاف طبيعة البشرة وانتظام الاستخدام.</p>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="video-section" id="video">
+    <div class="wrap">
+      <div class="divider-leaf"></div>
+      <div class="section-head">
+        <h2>فيديو تعريفي</h2>
+        <p>مساحة مخصّصة للفيديو التعريفي عن رامن فارما ومنتج Ramspark Cream (حوالي دقيقتين).</p>
+      </div>
+      <div class="video-shell">
+        <div class="play">▶</div>
+        <strong style="font-family:'Cairo',sans-serif;">سيتم إضافة الفيديو التعريفي هنا قريباً</strong>
+        <p class="hint">لإضافة الفيديو، ضع الملف داخل مجلد assets باسم intro.mp4 ثم استبدل هذا القسم بوسم فيديو HTML5.</p>
+      </div>
+      <p class="video-note">
+        مثال الكود عند توفر الفيديو:
+        <code>&lt;video controls poster="assets/video-poster.jpg" src="assets/intro.mp4"&gt;&lt;/video&gt;</code>
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="divider-leaf"></div>
+      <div class="section-head">
+        <h2>تواصل معنا</h2>
+        <p>يسعدنا تواصلكم لأي استفسار عن المنتجات أو لطلب الشراء.</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div>
+                <div class="label">للتواصل والطلب</div>
+                <div class="value ltr">+20 115 148 5144</div>
+              </div>
+              <a class="mini" href="tel:+201151485144">اتصال</a>
+            </div>
+            <div class="contact-card">
+              <div>
+                <div class="label">رقم آخر للتواصل</div>
+                <div class="value ltr">+20 110 258 5962</div>
+              </div>
+              <a class="mini" href="tel:+201102585962">اتصال</a>
+            </div>
+            <div class="contact-card">
+              <div>
+                <div class="label">الموقع الإلكتروني</div>
+                <div class="value ltr">ramen-pharma.com</div>
+              </div>
+              <a class="mini" href="https://ramen-pharma.com" target="_blank" rel="noopener">فتح</a>
+            </div>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/ramenpharma" target="_blank" rel="noopener">فيسبوك</a>
+            <a href="https://www.tiktok.com/@ramen.pharma" target="_blank" rel="noopener">تيك توك</a>
+            <a href="https://wa.me/201151485144" target="_blank" rel="noopener">واتساب</a>
+          </div>
+        </div>
+        <div class="qr-card">
+          <img src="assets/qr-tiktok.jpg" alt="كود QR لصفحة رامن فارما على تيك توك">
+          <p>امسح الكود لمتابعتنا على تيك توك <span class="ltr">@ramen.pharma</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="foot-brand">
+        <img src="assets/logo-horizontal.png" alt="Ramen Pharma">
+      </div>
+      <nav aria-label="روابط الفوتر">
+        <ul>
+          <li><a href="#about">عن الشركة</a></li>
+          <li><a href="#product">المنتج</a></li>
+          <li><a href="#results">النتائج</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      © <span id="year"></span> Ramen Pharma — جميع الحقوق محفوظة.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+</body>
+</html>
