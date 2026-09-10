@@ -458,14 +458,12 @@
         <h2>فيديو تعريفي</h2>
         <p>مساحة مخصّصة للفيديو التعريفي عن رامن فارما ومنتج Ramspark Cream (حوالي دقيقتين).</p>
       </div>
-      <div class="video-shell">
-        <div class="play">▶</div>
-        <strong style="font-family:'Cairo',sans-serif;">سيتم إضافة الفيديو التعريفي هنا قريباً</strong>
-        <p class="hint">لإضافة الفيديو، ضع الملف داخل مجلد assets باسم intro.mp4 ثم استبدل هذا القسم بوسم فيديو HTML5.</p>
-      </div>
+      <video controls poster="assets/video-poster.jpg" style="width:100%;border-radius:20px;display:block;">
+        <source src="assets/intro.mp4" type="video/mp4">
+      </video>
       <p class="video-note">
-        مثال الكود عند توفر الفيديو:
-        <code>&lt;video controls poster="assets/video-poster.jpg" src="assets/intro.mp4"&gt;&lt;/video&gt;</code>
+        اسم ملف الفيديو داخل مجلد assets يجب أن يكون: <code>intro.mp4</code>
+        (وصورة الغلاف الاختيارية باسم <code>video-poster.jpg</code>).
       </p>
     </div>
   </section>
