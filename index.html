@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ramen Pharma | رامن فارما — Ramspark Cream</title>
-<meta name="description" content="رامن فارما — Ramspark Cream، كريم مرطب للبشرة الجافة بتركيبة طبيعية غنية بالزنك.">
+<meta name="description" content="رامن فارما — Ramspark Cream، كريم مرطب علاجي للبشرة الجافة والمتهيجة بتركيبة حيوية متخصصة.">
 <link rel="icon" href="assets/logo-circle.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,14 +42,12 @@
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
 
-  /* skip link for keyboard users */
   .skip-link{
     position:absolute; right:-999px; top:auto;
     background:var(--navy); color:#fff; padding:10px 16px; border-radius:8px; z-index:200;
   }
   .skip-link:focus{ right:16px; top:16px; }
 
-  /* ---------- Header ---------- */
   header.site-header{
     position:sticky; top:0; z-index:100;
     background:rgba(246,246,242,0.92);
@@ -86,7 +84,6 @@
     .nav-toggle{ display:block; }
   }
 
-  /* ---------- Hero ---------- */
   .hero{
     background:
       radial-gradient(circle at 15% 20%, rgba(210,161,42,0.18), transparent 45%),
@@ -154,7 +151,6 @@
     .hero-art{ order:-1; max-width:340px; margin:0 auto; }
   }
 
-  /* ---------- Section shell ---------- */
   section{ padding:88px 0; }
   section .section-head{ max-width:62ch; margin-bottom:44px; }
   section h2{
@@ -170,33 +166,55 @@
     mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 14'><path d='M0 7 C10 0, 18 0, 28 7 C38 14, 46 14, 56 7' stroke='black' stroke-width='3' fill='none'/></svg>") no-repeat center / contain;
   }
 
-  /* ---------- About ---------- */
-  .about .wrap{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:start; }
-  .about-points{ list-style:none; margin:26px 0 0; padding:0; display:grid; gap:16px; }
-  .about-points li{
-    display:flex; gap:14px; align-items:flex-start;
-    background:var(--paper-alt); border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+  .about .section-head p{ margin-top:14px; }
+  .tagline{
+    color:var(--gold); font-family:'Cairo',sans-serif; font-weight:700;
+    font-size:1.05rem; margin-top:8px;
   }
-  .about-points .ic{
-    flex:none; width:38px; height:38px; border-radius:10px;
-    background:rgba(31,37,90,0.08); color:var(--navy);
-    display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Cairo',sans-serif;
+  .follow-inline{
+    display:flex; align-items:center; gap:12px; margin-top:28px;
+    background:var(--paper-alt); border:1px solid var(--line); border-radius:14px;
+    padding:14px 18px; font-size:.95rem; color:#4b4d55;
   }
-  .about-points strong{ display:block; color:var(--navy); font-family:'Cairo',sans-serif; margin-bottom:2px; }
-  .about-side{
-    background:linear-gradient(160deg, var(--navy), var(--navy-deep));
-    border-radius:20px; padding:32px; color:#eef0f8;
-  }
-  .about-side img{ width:120px; margin:0 auto 18px; }
-  .about-side p{ text-align:center; color:#cfd3e6; font-size:.98rem; }
-  .about-side .handle{
-    display:block; text-align:center; margin-top:10px; font-weight:700; color:var(--gold-soft);
-    font-family:'Cairo',sans-serif;
-  }
+  .follow-inline img{ width:38px; height:38px; flex:none; }
 
-  @media (max-width:840px){ .about .wrap{ grid-template-columns:1fr; } }
+  .journey{ background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .journey-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:8px; }
+  .journey-card{
+    position:relative;
+    background:var(--paper); border:1px solid var(--line); border-radius:18px;
+    padding:26px 24px;
+  }
+  .journey-card .jicon{ font-size:1.8rem; display:block; margin-bottom:14px; }
+  .journey-card h3{ color:var(--navy); font-size:1.15rem; font-weight:800; direction:ltr; text-align:right; }
+  .journey-card p{ margin:10px 0 0; color:#5a5c63; font-size:.95rem; }
+  .soon-tag{
+    position:absolute; top:22px; left:24px;
+    background:rgba(210,161,42,0.14); color:var(--gold);
+    border:1px solid rgba(210,161,42,0.35);
+    font-size:.78rem; font-weight:700; padding:4px 12px; border-radius:999px;
+  }
+  @media (max-width:760px){ .journey-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- Product ---------- */
+  .vision-mission{
+    background:linear-gradient(160deg, var(--navy-deep), var(--navy));
+    color:#eef0f8;
+  }
+  .vm-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+  .vm-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px; padding:30px 28px;
+  }
+  .vm-label{
+    display:block; font-family:'Cairo',sans-serif; font-weight:800;
+    color:var(--gold-soft); font-size:1.1rem; margin-bottom:16px;
+  }
+  .vm-card p{ color:#cfd3e6; font-size:.98rem; margin:0 0 12px; }
+  .vm-card p:last-child{ margin-bottom:0; }
+  .vm-tagline{ color:var(--gold-soft); font-weight:700; font-family:'Cairo',sans-serif; }
+  @media (max-width:760px){ .vm-grid{ grid-template-columns:1fr; } }
+
   .product{ background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .product .wrap{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center; }
   .product-frame{
@@ -221,7 +239,6 @@
 
   @media (max-width:840px){ .product .wrap{ grid-template-columns:1fr; } }
 
-  /* ---------- Results ---------- */
   .results-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
   .result-card{
     background:var(--paper-alt); border:1px solid var(--line); border-radius:18px; overflow:hidden;
@@ -235,7 +252,6 @@
   }
   @media (max-width:760px){ .results-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- Video ---------- */
   .video-section .wrap{ max-width:880px; }
   .video-shell{
     aspect-ratio:16/9;
@@ -261,7 +277,6 @@
     background:#eee; padding:2px 6px; border-radius:6px; font-size:.82rem;
   }
 
-  /* ---------- Contact ---------- */
   .contact{ background:var(--paper-alt); border-top:1px solid var(--line); }
   .contact-grid{ display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:start; }
   .contact-cards{ display:grid; gap:14px; }
@@ -290,7 +305,6 @@
 
   @media (max-width:840px){ .contact-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- Footer ---------- */
   footer{
     background:var(--navy-deep); color:#c9cce0; padding:48px 0 28px;
   }
@@ -325,6 +339,7 @@
     <nav class="main-nav" id="mainNav">
       <ul>
         <li><a href="#about">عن الشركة</a></li>
+        <li><a href="#journey">رحلتنا</a></li>
         <li><a href="#product">المنتج</a></li>
         <li><a href="#results">النتائج</a></li>
         <li><a href="#video">فيديو تعريفي</a></li>
@@ -343,8 +358,8 @@
         <span class="hero-eyebrow">Ramen Pharma</span>
         <h1>من قلب الطبيعة <span class="accent">لبشرتك</span></h1>
         <p class="lead">
-          Ramspark Cream — كريم مرطب ومهدئ للبشرة الجافة، بتركيبة تحتوي على الزنك
-          ومكوّنات مستوحاة من الطبيعة، لبشرة أكثر نعومة وراحة يوماً بعد يوم.
+          Ramspark Cream — كريم مرطب بتركيبة علاجية موجهة للبشرة الجافة والمتهيجة،
+          لبشرة أكثر نعومة وراحة يوماً بعد يوم.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://wa.me/201151485144" target="_blank" rel="noopener">تواصل عبر واتساب</a>
@@ -353,7 +368,7 @@
       </div>
       <div class="hero-art">
         <img src="assets/hero-product.jpg" alt="Ramspark Cream من رامن فارما، كريم مرطب للبشرة الجافة بحجم 100 جم">
-        <div class="badge"><span class="dot"></span> يحتوي على الزنك</div>
+        <div class="badge"><span class="dot"></span> تركيبة علاجية متخصصة</div>
       </div>
     </div>
   </section>
@@ -361,35 +376,85 @@
   <!-- About -->
   <section class="about" id="about">
     <div class="wrap">
-      <div>
-        <div class="divider-leaf"></div>
-        <div class="section-head">
-          <h2>رامن فارما، عناية جلدية مستوحاة من الطبيعة</h2>
-          <p>
-            نحرص في رامن فارما على تقديم مستحضرات جلدية بتركيبات مدروسة، توازن بين
-            فعالية المكوّنات الفعّالة ولطف المكوّنات الطبيعية، لتمنح بشرتك العناية
-            التي تستحقها.
-          </p>
+      <div class="divider-leaf"></div>
+      <div class="section-head" style="max-width:72ch;">
+        <h2>Ramen Pharma</h2>
+        <p class="tagline ltr">Science. Innovation. Healthier Skin.</p>
+        <p>
+          Ramen Pharma هي شركة مصرية متخصصة في تطوير حلول مبتكرة للعناية بالبشرة ودعم
+          المرضى الذين يعانون من مشكلات جلدية مزمنة، من خلال الجمع بين البحث العلمي،
+          الابتكار، والمكونات الحيوية الفعالة.
+        </p>
+        <p>
+          بدأت رحلتنا مع <span class="ltr">RAMSPARK®</span>، كريم مرطب بتركيبة علاجية
+          موجهة للبشرة الجافة والمتهيجة، والاحتياجات الجلدية المرتبطة بالصدفية والإكزيما
+          والجفاف الشديد. تعتمد تركيبته على مركبات حيوية طبيعية، من بينها
+          <span class="ltr">Flavonoids</span>، بهدف دعم ترطيب البشرة، تهدئة التهيج،
+          ودعم حاجز الجلد.
+        </p>
+        <p>
+          نؤمن أن العناية بالبشرة لا يجب أن تقتصر على تهدئة الأعراض فقط، بل يجب أن
+          تبدأ من فهم آليات المشكلة الجلدية وتطوير حلول مبنية على البحث والتطوير.
+        </p>
+        <div class="follow-inline">
+          <img src="assets/logo-circle.png" alt="شعار رامن فارما">
+          <span>تابعونا لمزيد من النصائح والعروض — <span class="ltr">@ramen.pharma</span></span>
         </div>
-        <ul class="about-points">
-          <li>
-            <span class="ic">١</span>
-            <div><strong>تركيبة متوازنة</strong>مرطبات ومكوّنات فعّالة بنسب مدروسة تناسب البشرة الجافة والحساسة.</div>
-          </li>
-          <li>
-            <span class="ic">٢</span>
-            <div><strong>غنية بالزنك</strong>عنصر معروف بدوره في دعم راحة البشرة المتهيجة.</div>
-          </li>
-          <li>
-            <span class="ic">٣</span>
-            <div><strong>استخدام يومي سهل</strong>قوام كريمي خفيف يمتص بسرعة دون أن يترك أثراً دهنياً.</div>
-          </li>
-        </ul>
       </div>
-      <div class="about-side">
-        <img src="assets/logo-circle.png" alt="شعار رامن فارما">
-        <p>تابعونا على مواقع التواصل الاجتماعي لمزيد من النصائح والعروض</p>
-        <span class="handle ltr">@ramen.pharma</span>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section class="journey" id="journey">
+    <div class="wrap">
+      <div class="divider-leaf"></div>
+      <div class="section-head">
+        <h2>رحلتنا في علم البشرة</h2>
+        <p class="tagline ltr" style="margin:6px 0 14px;">Our Skin Science Journey</p>
+        <p>
+          رامن فارما لا تتوقف عند منتج واحد. نعمل حاليًا على تطوير منظومة متكاملة
+          للعناية بالبشرة، ويأتي ضمن خطتنا القادمة:
+        </p>
+      </div>
+      <div class="journey-grid">
+        <div class="journey-card">
+          <span class="jicon">🧴</span>
+          <h3 class="ltr">RAMSPARK® Cleanser</h3>
+          <p>غسول متخصص لدعم روتين العناية بالبشرة الجافة والمتهيجة.</p>
+          <span class="soon-tag">قريباً</span>
+        </div>
+        <div class="journey-card">
+          <span class="jicon">💧</span>
+          <h3 class="ltr">RAMSPARK® Serum</h3>
+          <p>سيروم متطور مصمم ليكون خطوة إضافية في روتين العناية بالبشرة ودعم حاجزها الطبيعي.</p>
+          <span class="soon-tag">قريباً</span>
+        </div>
+      </div>
+      <p class="disclaimer">منتجات جديدة قادمة… بتركيبات مدروسة، وبنفس فلسفة البحث والابتكار.</p>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section class="vision-mission">
+    <div class="wrap vm-grid">
+      <div class="vm-card">
+        <span class="vm-label">رؤيتنا | Our Vision</span>
+        <p>
+          أن تصبح <span class="ltr">Ramen Pharma</span> شركة مصرية رائدة في مجال
+          <span class="ltr">Dermatological Innovation &amp; Skin Health</span>، وأن ننتقل
+          من تطوير منتج واحد إلى بناء منظومة متكاملة من الحلول الجلدية المبنية على
+          البحث العلمي.
+        </p>
+        <p>
+          نطمح إلى أن تكون مصر نقطة انطلاق لعلامة دوائية/جلدية قادرة على الوصول إلى
+          الأسواق العربية والعالمية، وأن نجعل البحث العلمي أساسًا لتطوير منتجات أكثر
+          أمانًا وفاعلية واحتياجًا للمريض.
+        </p>
+      </div>
+      <div class="vm-card vm-mission">
+        <span class="vm-label">رسالتنا | Our Mission</span>
+        <p>نبحث لنفهم… نبتكر لنطوّر… ونطوّر لنحسّن حياة المرضى.</p>
+        <p class="vm-tagline ltr">Ramen Pharma — From Scientific Research to Better Skin Health.</p>
       </div>
     </div>
   </section>
@@ -407,7 +472,7 @@
           <p>Emollient Cream for Dry Skin — كريم مرطب مصمم خصيصاً للبشرة الجافة، بحجم عملي 100 جم.</p>
         </div>
         <div class="chip-row">
-          <span class="chip">Zinc</span>
+          <span class="chip ltr">Flavonoids</span>
           <span class="chip">للبشرة الجافة</span>
           <span class="chip">100 جم</span>
           <span class="chip">قوام إيمولنت خفيف</span>
@@ -526,6 +591,7 @@
       <nav aria-label="روابط الفوتر">
         <ul>
           <li><a href="#about">عن الشركة</a></li>
+          <li><a href="#journey">رحلتنا</a></li>
           <li><a href="#product">المنتج</a></li>
           <li><a href="#results">النتائج</a></li>
           <li><a href="#contact">تواصل معنا</a></li>
